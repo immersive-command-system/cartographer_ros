@@ -233,10 +233,10 @@ bool MapBuilderBridge::HandleSubmapCloudQuery(
   if(submapDataMap.Contains(submap_id)) {
     const ::cartographer::mapping::PoseGraph::SubmapData& submapData 
           = submapDataMap.at(submap_id);
-    ::cartographer::mapping::proto::Submap protoSubmap;
+    ::cartographer::mapping::proto::Submap protoSubmap = submapData.submap->ToProto(true);
     // ::cartographer::mapping::proto::Submap* protoSubmapPtr = &protoSubmap;
 
-    submapData.submap->ToProto(&protoSubmap, true);
+    // submapData.submap->ToProto(true);
     const cartographer::mapping::proto::Submap3D& submap3d = protoSubmap.submap_3d();
     const auto& hybrid_grid = request.high_resolution ? 
                   submap3d.high_resolution_hybrid_grid() : submap3d.low_resolution_hybrid_grid();

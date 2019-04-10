@@ -18,6 +18,7 @@ project(cartographer_ros_msgs)
 
 set(PACKAGE_DEPENDENCIES
   geometry_msgs
+  sensor_msgs
   std_msgs
 )
 
@@ -46,6 +47,7 @@ add_message_files(
 add_service_files(
   DIRECTORY srv
   FILES
+    SubmapCloudQuery.srv
     FinishTrajectory.srv
     GetTrajectoryStates.srv
     ReadMetrics.srv
