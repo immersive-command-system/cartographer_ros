@@ -42,7 +42,8 @@ Getting started
 Installation
 ===============
 
-The installation is similar to cartographer ROS installation process. The RadNuke repository so that the packages will be in the same repository.
+The installation is similar to cartographer ROS installation process. The RadNuke repository so that the packages will be in the same repository.  
+
 ```
 sudo apt-get update
 sudo apt-get install -y python-wstool python-rosdep ninja-build
