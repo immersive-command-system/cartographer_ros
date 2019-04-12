@@ -47,17 +47,24 @@ The installation is similar to cartographer ROS installation process. The RadNuk
 ```
 sudo apt-get update
 sudo apt-get install -y python-wstool python-rosdep ninja-build
-
+```
+```
 mkdir catkin_ws
 cd catkin_ws
 wstool init src
 wstool merge -t src https://raw.githubusercontent.com/jeshlee121/cartographer_ros/blob/master/cartographer_ros.rosinstall
 wstool update -t src
 src/cartographer/scripts/install_proto3.sh
-
+```
+```
 sudo rosdep init
 rosdep update
-
+```
+``````
+function test() {
+  console.log("notice the blank line before this function?");
+}
+```
 catkin_make_isolated --install --use-ninja
 ```
 
