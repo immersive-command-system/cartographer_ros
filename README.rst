@@ -28,6 +28,8 @@ configurations. This project provides Cartographer's ROS integration.
 .. _Cartographer: https://github.com/googlecartographer/cartographer
 .. _SLAM: https://en.wikipedia.org/wiki/Simultaneous_localization_and_mapping
 
+This is a modified version of cartographer that allows querying/extracting 3D submaps as a service.
+
 Getting started
 ===============
 
@@ -36,6 +38,27 @@ Getting started
 
 .. _our Read the Docs site: https://google-cartographer-ros.readthedocs.io
 .. _creating an issue: https://github.com/googlecartographer/cartographer_ros/issues/new?labels=question
+
+Installation
+===============
+
+The installation is similar to cartographer ROS installation process. The RadNuke repository so that the packages will be in the same repository.
+`
+sudo apt-get update
+sudo apt-get install -y python-wstool python-rosdep ninja-build
+
+mkdir catkin_ws
+cd catkin_ws
+wstool init src
+wstool merge -t src https://raw.githubusercontent.com/jeshlee121/cartographer_ros/blob/master/cartographer_ros.rosinstall
+wstool update -t src
+src/cartographer/scripts/install_proto3.sh
+
+sudo rosdep init
+rosdep update
+
+catkin_make_isolated --install --use-ninja
+`
 
 Contributing
 ============
